@@ -60,7 +60,7 @@ def make_cal_heatmap(date_df):
                      label_standoff=6, border_line_color=None)
         p.add_layout(color_bar, 'right')
 
-        output_file(f'{y}_test_1.html', title = 'Num Pomos Calendar', mode = 'inline')
+        output_file(f'{y}_test_1.html', title = 'Num Pomos Calendar')
         show(p)
 
 
