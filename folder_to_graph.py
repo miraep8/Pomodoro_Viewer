@@ -33,7 +33,7 @@ def make_cal_heatmap(date_df):
         month_locs = []
         tick_dict = dict()
         tooltips = [
-            ('Number of Pomos', '@Num_Pomos') 
+            ('Number of Pomos', '@Num_Pomos')
            ]
         for ind, i in enumerate(list(range(1,13))):
             mid_month = datetime.date(int(y), i, 15)
@@ -64,8 +64,8 @@ def make_cal_heatmap(date_df):
                      label_standoff=6, border_line_color=None)
         p.add_layout(color_bar, 'right')
 
-        output_file(f'{y}_test_1.html', title = 'Num Pomos Calendar')
-        show(p)
+        output_file(f'{y}_pomo_cal.html', title = 'Num Pomos Calendar')
+        save(p)
 
 
 def make_figs(folder):
