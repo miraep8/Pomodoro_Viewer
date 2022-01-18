@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from bokeh.plotting import figure
 from bokeh.io import save, output_file, show
-from bokeh.models import FixedTicker, ColorBar, LinearColorMapper, BasicTicker
+from bokeh.models import FixedTicker, ColorBar, LinearColorMapper, BasicTicker, HoverTool
 from bokeh.palettes import Viridis256
 import numpy as np
 import datetime
@@ -32,6 +32,9 @@ def make_cal_heatmap(date_df):
         max_num_weeks = nye.isocalendar()[1]
         month_locs = []
         tick_dict = dict()
+        tooltips = [
+            ('Number of Pomos', '@Num_Pomos') 
+           ]
         for ind, i in enumerate(list(range(1,13))):
             mid_month = datetime.date(int(y), i, 15)
             month_locs.append(int(mid_month.isocalendar()[1]))
@@ -41,6 +44,7 @@ def make_cal_heatmap(date_df):
                 y_range = list(reversed(weekdays)),
                 width = 2080,
                 height = 315)
+        p.add_tools(HoverTool(tooltips = tooltips))
         p.title.text_font_size = '20pt'
         p.title.align = 'center'
         p.xaxis.ticker = FixedTicker(ticks = list(month_locs))
