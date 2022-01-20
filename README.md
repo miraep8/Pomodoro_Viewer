@@ -22,3 +22,10 @@ over the square and it will tell you. This is an example of what such a plot
 might look like:
 
 ![An Example of the Calendar Heatmap Plot](images/calendar_plot_example.png)
+
+In order to call this function from the command line here is the required
+argument:
+` python folder_to_graph.py PATH_TO_POMODORO_DATA_FOLDER`
+
+Where PATH_TO_POMODORO_DATA_FOLDER is a variable you should replace with your
+ local path to the pomodoro data folder. 
